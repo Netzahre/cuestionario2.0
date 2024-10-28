@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="266dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/deathstranding" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="#020202" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cuál es el nombre completo del personaje principal de Death Stranding? "
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+                <RadioGroup
+                    android:id="@+id/grupo1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/respuestarad1preg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Sam Porter Bridges"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad2preg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="John Walker"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad3preg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Clifford Unger"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad4preg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Die-Hardman"
+                        android:textColor="#FFFFFF" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/resultado1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="#020202" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cuál es la función del BB (Bridge Baby) en el juego? "
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/respuestaspinpreg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:dropDownWidth="wrap_content"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/resultado2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="34dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#CC000000"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿En qué continente se desarrolla la mayor parte de la acción en Death Stranding?"
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/grupo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/respuestarad1preg3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Europa"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad2preg3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="América"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad3preg3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Asia"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad4preg3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Australia"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/resultado3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cave"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#99000000"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pregunta4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Quién de estos personajes es el antagonista principal de Death Stranding?"
+                        android:textAlignment="center"
+                        android:textColor="#C79E51"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/respuestaspinpreg4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp" />
+
+                    <TextView
+                        android:id="@+id/resultado4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Qué criaturas hostiles pueden aparecer durante los episodios de Timefall?"
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/check1Preg5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="BTs"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/check2Preg5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="Mule"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/check3Preg5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="EV"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/check4Preg5"
+                    android:layout_width="match_parent"
+                    android:buttonTint="#C39C4F"
+                    android:layout_height="wrap_content"
+                    android:text="Ghouls"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/resultado5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="34dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cuál de los siguientes equipos te permite transportarte rápidamente entre ubicaciones?"
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/respuestaspinpreg6"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/resultado6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="34dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cuál de estos temas es central en la narrativa de Death Stranding?"
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/grupo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/respuestarad1preg7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Conexiones y aislamiento"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad2preg7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Guerra y política"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad3preg7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Venganza y redención"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad4preg7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Ciencia y magia"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/resultado7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="34dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pregunta8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Qué efecto tiene el Timefall en los objetos y en el entorno?"
+                    android:textAlignment="center"
+                    android:textColor="#C79E51"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/grupo4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/respuestarad1preg8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Acelera el deterioro y envejecimiento"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad2preg8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Regenera la flora y fauna"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad3preg8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Ralentiza el paso del tiempo"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/respuestarad4preg8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Transforma los objetos en otros materiales"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/resultado8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/clifford"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/clifford"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#99000000"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pregunta9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Cuál es el propósito de las estructuras Chiral que construyes y utilizas en el juego?"
+                        android:textAlignment="center"
+                        android:textColor="#C79E51"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/check1Preg9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#C39C4F"
+                        android:text="Facilitar la conexión entre jugadores en línea"
+                        android:textColor="#FFFFFF" />
+
+                    <CheckBox
+                        android:id="@+id/check2Preg9"
+                        android:layout_width="match_parent"
+                        android:buttonTint="#C39C4F"
+                        android:layout_height="wrap_content"
+                        android:text="Proveer puntos de almacenamiento"
+                        android:textColor="#FFFFFF" />
+
+                    <CheckBox
+                        android:id="@+id/check3Preg9"
+                        android:layout_width="match_parent"
+                        android:buttonTint="#C39C4F"
+                        android:layout_height="wrap_content"
+                        android:text="Permitir teletransportarse"
+                        android:textColor="#FFFFFF" />
+
+                    <CheckBox
+                        android:id="@+id/check4Preg9"
+                        android:layout_width="match_parent"
+                        android:buttonTint="#C39C4F"
+                        android:layout_height="wrap_content"
+                        android:text="Ofrecer nuevos tipos de armas"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/resultado9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#99000000"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pregunta10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Cuál es el objetivo principal de Sam Porter en Death Stranding?"
+                        android:textAlignment="center"
+                        android:textColor="#C79E51"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/respuestaspinpreg10"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/resultado10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/corregir"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:backgroundTint="#C59D50"
+                        android:text="Corregir"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#99000000"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/aciertos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:text="Aciertos:"
+                        android:textAlignment="viewStart"
+                        android:textColor="#C79E51"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:id="@+id/cantidad"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:textColor="#C79E51"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#99000000"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/resultado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:text="Resultado:"
+                        android:textAlignment="viewStart"
+                        android:textColor="#C79E51"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:id="@+id/numero"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:textColor="#C79E51"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
