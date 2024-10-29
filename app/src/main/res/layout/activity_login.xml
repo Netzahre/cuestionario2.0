@@ -10,8 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="358dp"
+        android:layout_height="369dp"
 
         android:layout_marginStart="27dp"
         android:layout_marginEnd="27dp"
@@ -43,11 +43,12 @@
             android:id="@+id/passTexto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="64dp"
             android:text="Contraseña"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/escUsuario" />
 
@@ -103,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:backgroundTint="#089218"
+            android:backgroundTint="#C79E51"
             android:text="Log-in"
             android:textSize="20sp" />
 
@@ -118,26 +119,16 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:backgroundTint="#089218"
+            android:backgroundTint="#C79E51"
             android:text="Sign-in"
             android:textSize="20sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="0dp"
-        android:layout_height="81dp"
+        android:layout_width="310dp"
+        android:layout_height="67dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="52dp"

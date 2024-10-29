@@ -10,8 +10,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.cuestionario_20.BienvenidaActivity
 import com.example.cuestionario_20.R
 import com.example.cuestionario_20.SQLiteHelper
+import com.example.prctica2_cuestionario.MainActivity
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,19 +31,24 @@ class Login : AppCompatActivity() {
         val registro = findViewById<Button>(R.id.registro)
         val acceder = findViewById<Button>(R.id.acceder)
         val admin = SQLiteHelper(this, "admin", null, 1)
+        val actividad = Intent(this, BienvenidaActivity::class.java)
 
         acceder.setOnClickListener {
             if (accederCuenta(textoUser.text.toString(), textoPassword.text.toString(), admin)) {
+                actividad.putExtra("usuario", textoUser.text.toString())
                 textoUser.setText("")
                 textoPassword.setText("")
+                startActivity(actividad)
             }
             textoUser.setText("")
             textoPassword.setText("")
         }
         registro.setOnClickListener {
             if (crearCuenta(textoUser.text.toString(), textoPassword.text.toString(), admin)) {
+                actividad.putExtra("usuario", textoUser.text.toString())
                 textoUser.setText("")
                 textoPassword.setText("")
+                startActivity(actividad)
             }
             textoUser.setText("")
             textoPassword.setText("")
@@ -96,6 +103,7 @@ class Login : AppCompatActivity() {
                     val registrar = ContentValues()
                     registrar.put("usuario", usuarioNuevo)
                     registrar.put("password", passwordNueva)
+                    registrar.put("notaMax", 0)
                     bd.insert("Usuarios", null, registrar)
                     bd.close()
                     mostrarToast("Registro existoso")
@@ -109,6 +117,5 @@ class Login : AppCompatActivity() {
             mostrarToast("Usuario y/o contraseña no pueden estar vacio")
             return false;
         }
-        return false
     }
 }
