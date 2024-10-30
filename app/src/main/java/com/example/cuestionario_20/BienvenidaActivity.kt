@@ -1,6 +1,8 @@
 package com.example.cuestionario_20
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +24,33 @@ class BienvenidaActivity : AppCompatActivity() {
         val bienvenida = findViewById<TextView>(R.id.bienvenida)
         val datos = intent.extras
         val usuario = datos?.getString("usuario")
-        val textoBienvenida = "Bienvenid@ " + usuario
-        bienvenida.setText(textoBienvenida)
+        val admin = SQLiteHelper(this, "admin", null, 1)
+        val comenzar = findViewById<Button>(R.id.comenzar)
+
+        //Cambiar textos
+        bienvenida.setText(usuario)
+
+        val notaTexto = findViewById<TextView>(R.id.nota)
+        notaTexto.setText(recogerNotaMasAlta(usuario, admin).toString())
+
+        //Mandar usuario y abrir pregunta 1
+        val pregunta1 = Intent(this, pregunta1::class.java)
+        pregunta1.putExtra("usuario", usuario)
+
+        comenzar.setOnClickListener {
+            startActivity(pregunta1)
+        }
+    }
+
+    fun recogerNotaMasAlta(usuario: String?, admin: SQLiteHelper): Double {
+        val bd = admin.readableDatabase
+        val fila = bd.rawQuery("select notaMax from Usuarios where usuario='${usuario}'", null)
+        if (fila.moveToFirst()) {
+            val nota = fila.getDouble(0)
+            fila.close()
+            bd.close()
+            return nota
+        }
+        return 0.0;
     }
 }

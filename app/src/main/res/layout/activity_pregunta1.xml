@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pregunta1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="905dp"
+        android:background="@drawable/sam"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/siguiente"
+            android:layout_width="362dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="84dp"
+            android:backgroundTint="@color/correcto"
+            android:text="Responder y avanzar a la siguiente pregunta"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="116dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="79dp"
+            android:background="#99000000"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/siguiente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:id="@+id/pregunta1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Cuál es el nombre completo del personaje principal de Death Stranding? "
+                android:textAlignment="center"
+                android:textColor="#C79E51"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="31dp" />
+
+            <RadioGroup
+                android:id="@+id/grupo1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/respuestarad1preg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="Sam Porter Bridges"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <RadioButton
+                    android:id="@+id/respuestarad2preg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="John Walker"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <RadioButton
+                    android:id="@+id/respuestarad3preg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="Clifford Unger"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <RadioButton
+                    android:id="@+id/respuestarad4preg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#C39C4F"
+                    android:text="Die-Hardman"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
