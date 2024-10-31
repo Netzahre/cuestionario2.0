@@ -5,6 +5,114 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cave"
     tools:context=".pregunta3">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="79dp"
+        android:background="#99000000"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/siguiente2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+
+        <TextView
+            android:id="@+id/pregunta3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿En qué continente se desarrolla la mayor parte de la acción en Death Stranding?"
+            android:textAlignment="center"
+            android:textColor="#C79E51"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="31dp" />
+
+        <RadioGroup
+            android:id="@+id/grupo2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/check1Preg5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#C39C4F"
+                android:text="Europa"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <RadioButton
+                android:id="@+id/check2Preg5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#C39C4F"
+                android:text="América"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <RadioButton
+                android:id="@+id/check3Preg5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#C39C4F"
+                android:text="Asia"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <RadioButton
+                android:id="@+id/check4Preg5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#C39C4F"
+                android:text="Australia"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/siguiente2"
+        android:layout_width="349dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="@color/correcto"
+        android:text="Responder y avanzar a la siguiente pregunta"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

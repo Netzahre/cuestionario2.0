@@ -8,18 +8,23 @@
     tools:context=".BienvenidaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="700dp"
-        android:layout_height="891dp"
+        android:id="@+id/constraintLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/deathstranding"
-        tools:layout_editor_absoluteX="-145dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="360dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="93dp"
-            android:layout_marginBottom="46dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="129dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="107dp"
             android:background="#99000000"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/comenzar"
@@ -37,8 +42,9 @@
                 android:layout_height="175dp"
                 android:text="Usuario"
                 android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="34sp" />
+                android:textColor="@color/correcto"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -62,9 +68,11 @@
 
         <Button
             android:id="@+id/comenzar"
-            android:layout_width="372dp"
-            android:layout_height="88dp"
-            android:layout_marginBottom="206dp"
+            android:layout_width="365dp"
+            android:layout_height="103dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="35dp"
             android:backgroundTint="@color/correcto"
             android:text="Comenzar cuestionario"
             android:textAlignment="center"

@@ -1,4 +1,4 @@
-package com.example.encriptador_de_texto_eas
+package com.example.cuestionario_20
 
 import android.content.ContentValues
 import android.content.Intent
@@ -10,10 +10,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.cuestionario_20.BienvenidaActivity
-import com.example.cuestionario_20.R
-import com.example.cuestionario_20.SQLiteHelper
-import com.example.prctica2_cuestionario.MainActivity
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
