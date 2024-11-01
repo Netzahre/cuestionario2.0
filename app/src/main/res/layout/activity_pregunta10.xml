@@ -2,16 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraint"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pregunta2">
+    tools:context=".pregunta10">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="911dp"
-        android:background="@drawable/bb"
+        android:background="@drawable/fotofinal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,7 +24,7 @@
             android:layout_marginEnd="47dp"
             android:layout_marginBottom="84dp"
             android:backgroundTint="@color/correcto"
-            android:text="Responder y avanzar a la siguiente pregunta"
+            android:text="Finalizar cuestionario y ver resultados"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="28sp"
@@ -56,7 +56,7 @@
                 android:id="@+id/pregunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¿Cuál es la función del BB (Bridge Baby) en el juego? "
+                android:text="¿Cuál es el objetivo principal de Sam Porter en Death Stranding?"
                 android:textAlignment="center"
                 android:textColor="#C79E51"
                 android:textSize="34sp"
@@ -68,7 +68,7 @@
                 android:layout_height="99dp" />
 
             <Spinner
-                android:id="@+id/respuestaspinpreg2"
+                android:id="@+id/respuestaspinpreg4"
                 android:layout_width="match_parent"
                 android:layout_height="111dp"
                 android:dropDownWidth="wrap_content"

@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Cuestionario_20"
         tools:targetApi="31">
         <activity
+            android:name=".ResultadosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pregunta10"
+            android:exported="false" />
+        <activity
+            android:name=".pregunta9"
+            android:exported="false" />
+        <activity
+            android:name=".pregunta8"
+            android:exported="false" />
+        <activity
+            android:name=".pregunta7"
+            android:exported="false" />
+        <activity
             android:name=".pregunta6"
             android:exported="false" />
         <activity

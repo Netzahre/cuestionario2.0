@@ -15,14 +15,15 @@ class pregunta4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pregunta4)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.constraint)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val datos = intent.extras
         val usuario = datos?.getString("usuario")
-        val respuestasSimpleUsuario = datos?.getStringArray("respuestasSimple")
+        var respuestasSimpleUsuario = datos?.getString("respuestasSimple") ?: ""
 
         val pregunta = arrayOf("Heartman", "Fragile", "Higgs Monaghan", "Amelie")
         val adaptador = ArrayAdapter(this, R.layout.my_menu_dropdown, pregunta)
@@ -32,7 +33,7 @@ class pregunta4 : AppCompatActivity() {
         val siguiente = findViewById<Button>(R.id.siguiente)
 
         siguiente.setOnClickListener {
-            recogerRespuesta(spinner, respuestasSimpleUsuario)
+            respuestasSimpleUsuario = recogerRespuesta(spinner, respuestasSimpleUsuario)
             val pregunta5 = Intent(this, pregunta5::class.java)
             pregunta5.putExtra("usuario", usuario)
             pregunta5.putExtra("respuestasSimple", respuestasSimpleUsuario)
@@ -40,8 +41,9 @@ class pregunta4 : AppCompatActivity() {
         }
     }
 
-    fun recogerRespuesta(spinner: Spinner, respuestasSimpleUsuario: Array<String>?) {
-        respuestasSimpleUsuario?.set(3, spinner.selectedItem.toString())
+    fun recogerRespuesta(spinner: Spinner, respuestasSimpleUsuario: String): String {
+        val respuestasArray = respuestasSimpleUsuario.split(";").toMutableList()
+        respuestasArray.add(spinner.selectedItem.toString())
+        return respuestasArray.joinToString(";")
     }
-
 }

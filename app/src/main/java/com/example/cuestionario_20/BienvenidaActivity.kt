@@ -8,14 +8,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import org.w3c.dom.Text
 
 class BienvenidaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_bienvenida)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.constraint)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -25,15 +24,13 @@ class BienvenidaActivity : AppCompatActivity() {
         val datos = intent.extras
         val usuario = datos?.getString("usuario")
         val admin = SQLiteHelper(this, "admin", null, 1)
-        val comenzar = findViewById<Button>(R.id.comenzar)
+        val comenzar = findViewById<Button>(R.id.desconectar)
 
-        //Cambiar textos
-        bienvenida.setText(usuario)
+        bienvenida.text = "Bienvenido, $usuario"
 
         val notaTexto = findViewById<TextView>(R.id.nota)
-        notaTexto.setText(recogerNotaMasAlta(usuario, admin).toString())
+        notaTexto.text = recogerNotaMasAlta(usuario, admin).toString()
 
-        //Mandar usuario y abrir pregunta 1
         val pregunta1 = Intent(this, pregunta1::class.java)
         pregunta1.putExtra("usuario", usuario)
 
@@ -44,13 +41,16 @@ class BienvenidaActivity : AppCompatActivity() {
 
     fun recogerNotaMasAlta(usuario: String?, admin: SQLiteHelper): Double {
         val bd = admin.readableDatabase
-        val fila = bd.rawQuery("select notaMax from Usuarios where usuario='${usuario}'", null)
-        if (fila.moveToFirst()) {
+        val fila = bd.rawQuery("SELECT notaMax FROM Usuarios WHERE usuario=?", arrayOf(usuario))
+        return if (fila.moveToFirst()) {
             val nota = fila.getDouble(0)
             fila.close()
             bd.close()
-            return nota
+            nota
+        } else {
+            fila.close()
+            bd.close()
+            0.0
         }
-        return 0.0;
     }
 }

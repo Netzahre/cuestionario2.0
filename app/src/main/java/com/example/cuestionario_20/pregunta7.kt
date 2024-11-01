@@ -10,15 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class pregunta1 : AppCompatActivity() {
-
-    // Cambiar el array de respuestas a un String vacío
-    var respuestasSimpleUsuario = ""
-
+class pregunta7 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_pregunta1)
+        setContentView(R.layout.activity_pregunta7)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.constraint)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -26,28 +22,29 @@ class pregunta1 : AppCompatActivity() {
         }
 
         val datos = intent.extras
-        val usuario = datos?.getString("usuario")
-        val grupo = findViewById<RadioGroup>(R.id.grupo1)
-        val siguiente = findViewById<Button>(R.id.siguiente)
+        val usuario = datos?.getString("usuario") ?: "Usuario Anónimo"
+        val respuestasSimpleUsuario = datos?.getString("respuestasSimple") ?: ""
+
+        val siguiente = findViewById<Button>(R.id.siguiente2)
+        val grupo = findViewById<RadioGroup>(R.id.grupo2)
 
         siguiente.setOnClickListener {
-            recogerRespuesta(grupo)
-            val pregunta2 = Intent(this, pregunta2::class.java)
-            pregunta2.putExtra("usuario", usuario)
-            pregunta2.putExtra("respuestasSimple", respuestasSimpleUsuario)
-            startActivity(pregunta2)
+            val respuestasActualizadas = recogerRespuesta(grupo, respuestasSimpleUsuario)
+            val pregunta8 = Intent(this, pregunta8::class.java)
+            pregunta8.putExtra("usuario", usuario)
+            pregunta8.putExtra("respuestasSimple", respuestasActualizadas)
+            pregunta8.putExtra("respuestasPreg5", datos?.getString("respuestasPreg5"))
+            startActivity(pregunta8)
         }
     }
 
-    fun recogerRespuesta(grupo: RadioGroup) {
-        val respuesta = recuperarRadioPulsado(grupo)
-        if (respuestasSimpleUsuario.isNotEmpty()) {
-            respuestasSimpleUsuario += ";"
-        }
-        respuestasSimpleUsuario += respuesta
+    private fun recogerRespuesta(grupo: RadioGroup, respuestasSimpleUsuario: String): String {
+        val respuestasArray = respuestasSimpleUsuario.split(";").toMutableList()
+        respuestasArray.add(recuperarRadioPulsado(grupo))
+        return respuestasArray.joinToString(";")
     }
 
-    fun recuperarRadioPulsado(radioGroup: RadioGroup): String {
+    private fun recuperarRadioPulsado(radioGroup: RadioGroup): String {
         val idRadioElegido = radioGroup.checkedRadioButtonId
         return if (idRadioElegido != -1) {
             val radioElegidoTexto: RadioButton = findViewById(idRadioElegido)

@@ -15,14 +15,15 @@ class pregunta2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pregunta2)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.constraint)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val datos = intent.extras
         val usuario = datos?.getString("usuario")
-        val respuestasSimpleUsuario = datos?.getStringArray("respuestasSimple")
+        var respuestasSimpleUsuario = datos?.getString("respuestasSimple") ?: ""
 
         val pregunta = arrayOf(
             "Detectar entidades sobrenaturales",
@@ -40,7 +41,7 @@ class pregunta2 : AppCompatActivity() {
         val siguiente = findViewById<Button>(R.id.siguiente)
 
         siguiente.setOnClickListener {
-            recogerRespuesta(spinner, respuestasSimpleUsuario)
+            respuestasSimpleUsuario = recogerRespuesta(spinner, respuestasSimpleUsuario)
             val pregunta3 = Intent(this, pregunta3::class.java)
             pregunta3.putExtra("usuario", usuario)
             pregunta3.putExtra("respuestasSimple", respuestasSimpleUsuario)
@@ -48,7 +49,9 @@ class pregunta2 : AppCompatActivity() {
         }
     }
 
-    fun recogerRespuesta(spinner: Spinner, respuestasSimpleUsuario: Array<String>?) {
-        respuestasSimpleUsuario?.set(1, spinner.selectedItem.toString())
+    fun recogerRespuesta(spinner: Spinner, respuestasSimpleUsuario: String): String {
+        val respuestasArray = respuestasSimpleUsuario.split(";").toMutableList()
+        respuestasArray.add(spinner.selectedItem.toString())
+        return respuestasArray.joinToString(";")
     }
 }
